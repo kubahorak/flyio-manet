@@ -7,5 +7,6 @@ Run the following commands in this folder:
 fly auth login
 fly launch
 ```
+To redeploy it, instead of `fly launch`, run `fly deploy`.
 
 Inspired by [pdelsante/manet-dockerfile](https://github.com/pdelsante/manet-dockerfile).
