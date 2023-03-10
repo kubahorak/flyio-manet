@@ -6,20 +6,18 @@ ENV DEBIAN_FRONTEND noninteractive
 EXPOSE 8891
 
 ENV NVM_DIR      /root/.nvm
-ENV NODE_VERSION v18.12.1
+ENV NODE_VERSION v18.15.0
 ENV NODE_PATH    $NVM_DIR/versions/node/$NODE_VERSION/lib/node_modules
 ENV PATH         $NVM_DIR/versions/node/$NODE_VERSION/bin:$PATH
 
 RUN apt-get update && \
     apt-get -y install --no-install-recommends \
     build-essential xvfb libfontconfig1 ca-certificates wget && \
-    wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash && \
+    wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash && \
     . $NVM_DIR/nvm.sh && \
     nvm install $NODE_VERSION && \
     nvm alias default $NODE_VERSION && \
     nvm use default && \
-    npm config set user 0 && \
-    npm config set unsafe-perm true && \
     npm config set prefix /usr/local && \
     npm install -g slimerjs@1.0.0 && \
     npm install -g phantomjs-prebuilt@2.1.16 && \
