@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND noninteractive
 EXPOSE 8891
 
 ENV NVM_DIR      /root/.nvm
-ENV NODE_VERSION v18.15.0
+ENV NODE_VERSION v18.16.0
 ENV NODE_PATH    $NVM_DIR/versions/node/$NODE_VERSION/lib/node_modules
 ENV PATH         $NVM_DIR/versions/node/$NODE_VERSION/bin:$PATH
 
