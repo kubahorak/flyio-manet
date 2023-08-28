@@ -6,14 +6,14 @@ ENV DEBIAN_FRONTEND noninteractive
 EXPOSE 8891
 
 ENV NVM_DIR      /root/.nvm
-ENV NODE_VERSION v18.16.0
+ENV NODE_VERSION v18.17.1
 ENV NODE_PATH    $NVM_DIR/versions/node/$NODE_VERSION/lib/node_modules
 ENV PATH         $NVM_DIR/versions/node/$NODE_VERSION/bin:$PATH
 
 RUN apt-get update && \
     apt-get -y install --no-install-recommends \
     build-essential xvfb libfontconfig1 ca-certificates wget && \
-    wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash && \
+    wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash && \
     . $NVM_DIR/nvm.sh && \
     nvm install $NODE_VERSION && \
     nvm alias default $NODE_VERSION && \
